@@ -23,6 +23,8 @@ namespace WBE_2Eggs100Floors
                 {
                     Console.Write("\nEnter an integer between 1 and 100\n\n>>> ");
                     int input = int.Parse(Console.ReadLine().Trim());
+                    if (input < 1 || input > 100)
+                        throw new Exception("Invalid Entry!");
                     FindHighestSafeFloor(input);
                 }
                 catch (Exception ex)
@@ -38,7 +40,6 @@ namespace WBE_2Eggs100Floors
         static void FindHighestSafeFloor(int highest)
         {
             int testFloor;
-            bool keepLooping = true;
             // dropping the first egg from the 50th floor.
             // if it doesn't break then start dropping the next egg from every other floor above 50th until it breaks.
             if (highest >= 50)
