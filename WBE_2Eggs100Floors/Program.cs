@@ -39,24 +39,24 @@ namespace WBE_2Eggs100Floors
 
         static void FindHighestSafeFloor(int highest)
         {
-            int testFloor;
+            int floor;
             // dropping the first egg from the 51st floor.
             if (highest >= 51)
             {
                 // if it doesn't break then start dropping the next egg from every other floor above 51st until it breaks.
-                testFloor = 52;
+                floor = 52;
             }
             else
             {
                 // if it breaks then start dropping the other egg from the 2nd floor and work your way up until it breaks.
-                testFloor = 2;
+                floor = 2;
             }
-            Console.WriteLine($"\nTest 1: The 1st Egg was dropped from floor #51 and it {( highest >=50 ? "didn't break." : "broke.")}");
-            while (highest >= testFloor)
+            Console.WriteLine($"\nTest 1: 1st Egg was dropped from floor #51 and it {( highest >=50 ? "didn't break." : "broke.")}");
+            while (highest >= floor)
             {
-                Console.WriteLine($"\nTest {( highest >=50 ? testFloor - 50 : testFloor)}: The 2nd egg was dropped from floor #{testFloor++} and it didn't break.");
+                Console.WriteLine($"\nTest {( highest >=50 ? floor - 50 : floor)}: 2nd egg was dropped from floor #{floor++} and it didn't break.");
             }
-            Console.WriteLine($"\nTest {(highest >= 50 ? testFloor - 50 : testFloor)}: The 2nd egg was dropped from floor #{testFloor} and it broke.\n\nFloor #{testFloor - 1} is the highest safe floor.");
+            Console.WriteLine($"\nTest {(highest >= 50 ? floor - 50 : floor)}: 2nd egg was dropped from floor #{floor} and it broke.\n\nFloor #{floor - 1} is the highest safe floor.");
         }
     }
 }
