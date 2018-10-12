@@ -41,28 +41,22 @@ namespace WBE_2Eggs100Floors
         {
             int testFloor;
             // dropping the first egg from the 50th floor.
-            // if it doesn't break then start dropping the next egg from every other floor above 50th until it breaks.
             if (highest >= 50)
             {
-                Console.WriteLine("\nTest 1: The 1st Egg was dropped from floor #50 and it didn't break");
+                // if it doesn't break then start dropping the next egg from every other floor above 50th until it breaks.
                 testFloor = 51;
-                do
-                {
-                    Console.WriteLine($"\nTest {testFloor - 49}: The 2nd egg was dropped from floor #{testFloor++} and it didn't break");
-                } while (highest >= testFloor);
-                Console.WriteLine($"\nTest {testFloor - 49}: The 2nd egg was dropped from floor #{testFloor} and it broke");
             }
-            // if it breaks then start dropping the other egg from the 1st floor and work your way up until it breaks.
             else
             {
-                Console.WriteLine("\nTest 1: The 1st Egg was dropped from floor #50 and it broke");
+                // if it breaks then start dropping the other egg from the 1st floor and work your way up until it breaks.
                 testFloor = 1;
-                do
-                {
-                    Console.WriteLine($"\nTest {testFloor + 1}: The 2nd egg was dropped from floor #{testFloor++} and it didn't break");
-                } while (highest >= testFloor);
-                Console.WriteLine($"\nTest {testFloor + 1}: The 2nd egg was dropped from floor #{testFloor} and it broke");
             }
+            Console.WriteLine($"\nTest 1: The 1st Egg was dropped from floor #50 and it {( highest >=50 ? "didn't break" : "broke")}");
+            do
+            {
+                Console.WriteLine($"\nTest {( highest >=50 ? testFloor - 49 : testFloor + 1)}: The 2nd egg was dropped from floor #{testFloor++} and it didn't break");
+            } while (highest >= testFloor);
+            Console.WriteLine($"\nTest {(highest >= 50 ? testFloor - 49 : testFloor + 1)}: The 2nd egg was dropped from floor #{testFloor} and it broke");
         }
     }
 }
