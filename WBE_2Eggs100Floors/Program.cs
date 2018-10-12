@@ -40,23 +40,23 @@ namespace WBE_2Eggs100Floors
         static void FindHighestSafeFloor(int highest)
         {
             int testFloor;
-            // dropping the first egg from the 50th floor.
-            if (highest >= 50)
+            // dropping the first egg from the 51st floor.
+            if (highest >= 51)
             {
-                // if it doesn't break then start dropping the next egg from every other floor above 50th until it breaks.
-                testFloor = 51;
+                // if it doesn't break then start dropping the next egg from every other floor above 51st until it breaks.
+                testFloor = 52;
             }
             else
             {
-                // if it breaks then start dropping the other egg from the 1st floor and work your way up until it breaks.
-                testFloor = 1;
+                // if it breaks then start dropping the other egg from the 2nd floor and work your way up until it breaks.
+                testFloor = 2;
             }
-            Console.WriteLine($"\nTest 1: The 1st Egg was dropped from floor #50 and it {( highest >=50 ? "didn't break" : "broke")}");
-            do
+            Console.WriteLine($"\nTest 1: The 1st Egg was dropped from floor #51 and it {( highest >=50 ? "didn't break." : "broke.")}");
+            while (highest >= testFloor)
             {
-                Console.WriteLine($"\nTest {( highest >=50 ? testFloor - 49 : testFloor + 1)}: The 2nd egg was dropped from floor #{testFloor++} and it didn't break");
-            } while (highest >= testFloor);
-            Console.WriteLine($"\nTest {(highest >= 50 ? testFloor - 49 : testFloor + 1)}: The 2nd egg was dropped from floor #{testFloor} and it broke");
+                Console.WriteLine($"\nTest {( highest >=50 ? testFloor - 50 : testFloor)}: The 2nd egg was dropped from floor #{testFloor++} and it didn't break.");
+            }
+            Console.WriteLine($"\nTest {(highest >= 50 ? testFloor - 50 : testFloor)}: The 2nd egg was dropped from floor #{testFloor} and it broke.\n\nFloor #{testFloor - 1} is the highest safe floor.");
         }
     }
 }
