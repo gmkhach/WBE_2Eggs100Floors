@@ -47,17 +47,9 @@ namespace WBE_2Eggs100Floors
                 testFloor = 51;
                 do
                 {
-                    if (highest >= testFloor)
-                    {
-                        Console.WriteLine($"\nTest {testFloor - 49}: The 2nd egg was dropped from floor #{testFloor} and it didn't break");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"\nTest {testFloor - 49}: The 2nd egg was dropped from floor #{testFloor} and it broke");
-                        keepLooping = false;
-                    }
-                    testFloor++;
-                } while (keepLooping);
+                    Console.WriteLine($"\nTest {testFloor - 49}: The 2nd egg was dropped from floor #{testFloor++} and it didn't break");
+                } while (highest >= testFloor);
+                Console.WriteLine($"\nTest {testFloor - 49}: The 2nd egg was dropped from floor #{testFloor} and it broke");
             }
             // if it breaks then start dropping the other egg from the 1st floor and work your way up until it breaks.
             else
@@ -66,17 +58,9 @@ namespace WBE_2Eggs100Floors
                 testFloor = 1;
                 do
                 {
-                    if (highest >= testFloor)
-                    {
-                        Console.WriteLine($"\nTest {testFloor + 1}: The 2nd egg was dropped from floor #{testFloor} and it didn't break");
-                    }
-                    else
-                    {
-                        Console.WriteLine($"\nTest {testFloor + 1}: The 2nd egg was dropped from floor #{testFloor} and it broke");
-                        keepLooping = false;
-                    }
-                    testFloor++;
-                } while (keepLooping);
+                    Console.WriteLine($"\nTest {testFloor + 1}: The 2nd egg was dropped from floor #{testFloor++} and it didn't break");
+                } while (highest >= testFloor);
+                Console.WriteLine($"\nTest {testFloor + 1}: The 2nd egg was dropped from floor #{testFloor} and it broke");
             }
         }
     }
